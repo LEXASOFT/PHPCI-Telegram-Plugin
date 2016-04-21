@@ -27,7 +27,7 @@ class Telegram implements \PHPCI\Plugin
     protected $api_key;
     protected $message;
     protected $recipients;
-    protected $sendlog;
+    protected $send_log;
 
     /**
      * Standard Constructor
@@ -62,7 +62,7 @@ class Telegram implements \PHPCI\Plugin
         } else {
             throw new \Exception("Not setting recipients");
         }
-        $this->sendlog = isset($options['sendlog']) && ($options['sendlog'] !== flase);
+        $this->send_log = isset($options['send_log']) && ((bool) $options['send_log'] !== false);
     }
 
     /**
@@ -101,7 +101,7 @@ class Telegram implements \PHPCI\Plugin
 
             $http->post($uri, json_encode($params));
 
-            if ($this->sendlog) {
+            if ($this->send_log) {
                 $params = array(
                     'chat_id' => $chat_id,
                     'text' => $buildMsg,

@@ -14,5 +14,5 @@ complete:
             - <user id>
             - "-<group id>"
             - "@<channel id>"
-        sendlog: true
+        send_log: true
 ```
