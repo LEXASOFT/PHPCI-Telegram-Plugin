@@ -1,5 +1,5 @@
 {
-    "name": "LEXASOFT/PHPCI-Telegram-Plugin",
+    "name": "lexasoft/phpci-telegram-plugin",
     "description": "PHPCI plugin for Telegram",
     "license": "GNU",
     "authors": [
