@@ -1,0 +1,20 @@
+{
+    "name": "LEXASOFT/PHPCI-Telegram-Plugin",
+    "description": "PHPCI plugin for Telegram",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "LEXASOFT",
+            "email": "lexasoft83@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "target-dir": "LEXASOFT/PHPCI/Plugin",
+    "autoload": {
+        "psr-0": {
+            "LEXASOFT\\PHPCI\\Plugin": ""
+        }
+    }
+}
