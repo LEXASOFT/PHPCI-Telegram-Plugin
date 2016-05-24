@@ -47,12 +47,11 @@ class Telegram implements \PHPCI\Plugin
             throw new \Exception("Not setting recipients");
         }
         $this->api_key = $options['api_key'];
+        $this->message = '[%ICON_BUILD%] [%PROJECT_TITLE%](%PROJECT_URI%) - [Build #%BUILD%](%BUILD_URI%) has finished ' .
+            'for commit [%SHORT_COMMIT% (%COMMIT_EMAIL%)](%COMMIT_URI%) ' .
+            'on branch [%BRANCH%](%BRANCH_URI%)';
         if (isset($options['message'])) {
             $this->message = $options['message'];
-        } else {
-            $this->message = '[%ICON_BUILD%] [%PROJECT_TITLE%](%PROJECT_URI%) - [Build #%BUILD%](%BUILD_URI%) has finished ' .
-                'for commit [%SHORT_COMMIT% (%COMMIT_EMAIL%)](%COMMIT_URI%) ' .
-                'on branch [%BRANCH%](%BRANCH_URI%)';
         }
         $this->recipients = array();
         if (is_string($options['recipients'])) {
