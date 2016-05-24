@@ -40,11 +40,13 @@ class Telegram implements \PHPCI\Plugin
     {
         $this->phpci = $phpci;
         $this->build = $build;
-        if (isset($options['api_key'])) {
-            $this->api_key = $options['api_key'];
-        } else {
+        if (empty($options['api_key'])) {
             throw new \Exception("Not setting telegram api_key");
         }
+        if (empty($options['recipients'])) {
+            throw new \Exception("Not setting recipients");
+        }
+        $this->api_key = $options['api_key'];
         if (isset($options['message'])) {
             $this->message = $options['message'];
         } else {
@@ -52,15 +54,11 @@ class Telegram implements \PHPCI\Plugin
                 'for commit [%SHORT_COMMIT% (%COMMIT_EMAIL%)](%COMMIT_URI%) ' .
                 'on branch [%BRANCH%](%BRANCH_URI%)';
         }
-        $this->recipients  = array();
-        if (!empty($options['recipients'])) {
-            if (is_string($options['recipients'])) {
-                $this->recipients = array($options['recipients']);
-            } elseif (is_array($options['recipients'])) {
-                $this->recipients = $options['recipients'];
-            }
-        } else {
-            throw new \Exception("Not setting recipients");
+        $this->recipients = array();
+        if (is_string($options['recipients'])) {
+            $this->recipients = array($options['recipients']);
+        } elseif (is_array($options['recipients'])) {
+            $this->recipients = $options['recipients'];
         }
         $this->send_log = isset($options['send_log']) && ((bool) $options['send_log'] !== false);
     }
