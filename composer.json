@@ -11,10 +11,20 @@
     "require": {
         "php": ">=5.3.3"
     },
-    "target-dir": "LEXASOFT/PHPCI/Plugin",
     "autoload": {
-        "psr-0": {
-            "LEXASOFT\\PHPCI\\Plugin": ""
+        "classmap": [ 
+            "src/Telegram.php"
+        ]
+    },
+    "extra": {
+        "phpci": {
+            "pluginNamespace": "PHPCI\\Plugin\\",
+            "suppliedPlugins": [
+                {
+                    "name": "Telegram",
+                    "class": "Telegram"
+                }
+            ]
         }
     }
 }

@@ -2,7 +2,7 @@
 # PHPCI-Telegram-Plugin
 Telegram plugin for PHPCI
 # Installation
-Place the file under the folder <path to PHPCI>/PHPCI/plugins
+First of all - `composer require lexasoft/phpci-telegram-plugin`
 
 # Add to project
 In the PHPCI Project config section add the Telegram trigger
