@@ -1,3 +1,5 @@
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/3a12c379-2634-4c86-bd00-60bb8f130763/big.png)](https://insight.sensiolabs.com/projects/3a12c379-2634-4c86-bd00-60bb8f130763)
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9e7ca719cbb240ec8dbb5500b39c73a2)](https://www.codacy.com/app/LEXASOFT/PHPCI-Telegram-Plugin)
 # PHPCI-Telegram-Plugin
 Telegram plugin for PHPCI
